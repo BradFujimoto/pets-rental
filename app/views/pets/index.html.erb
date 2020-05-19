@@ -1,0 +1,7 @@
+<h1>Available pets</h1>
+<hr>
+  <ul><% @pets.each do |pet| %></ul>
+  <li class="pets-list-item"><%= pet.name %></li>
+  <% end %>
+<hr>
+<%= link_to "Add a pet", new_pet_path  %>
