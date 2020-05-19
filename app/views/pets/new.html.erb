@@ -2,6 +2,7 @@
 <hr>
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :species %>
   <%= f.input :environment %>
   <%= f.input :age %>
