@@ -8,23 +8,26 @@
         <% @pets.each do |pet| %>
 
             <% if pet.photo.attached? %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= pet.photo %>)">
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= pet.photo.key %>)">
                 <%= link_to pet.name, pet_path(pet) %>
-                <%= link_to "Delete",
-                          pet_path(pet),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" } %>
-              </div>
-            <% else %>
-              <div class="card-category"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://res.cloudinary.com/da7juwdee/image/upload/v1589893168/dessin-chien_cojyc3.jpg"%>)">
-                <%= link_to pet.name, pet_path(pet) %>
-                <%= link_to "Delete",
+                <div class="card-remove-link">
+                  <%= link_to "+",
                             pet_path(pet),
                             method: :delete,
                             data: { confirm: "Are you sure?" } %>
+                </div>
+              </div>
+            <% else %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://res.cloudinary.com/da7juwdee/image/upload/v1589893168/dessin-chien_cojyc3.jpg"%>)">
+                <%= link_to pet.name, pet_path(pet) %>
+                <div class="card-remove-link">
+                  <%= link_to "+",
+                              pet_path(pet),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" } %>
+                </div>
               </div>
             <% end %>
-
         <% end %>
 
       </div>
@@ -33,4 +36,4 @@
 </div>
 
 <hr>
-<%= link_to "Add a pet", new_pet_path  %>
+<%= link_to "I want to rent my own pet", new_pet_path  %>
