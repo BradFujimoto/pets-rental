@@ -1,0 +1,12 @@
+<h1>Available pets</h1>
+<hr>
+  <ul><% @pets.each do |pet| %></ul>
+  <% if pet.photo.attached? %>
+    <%= cl_image_tag pet.photo.key, width: 400, height: 300, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
+  <% end %>
+  <li class="pets-list-item"><%= pet.name %></li>
+  <% end %>
+<hr>
+<%= link_to "Add a pet", new_pet_path  %>

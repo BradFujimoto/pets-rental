@@ -1,0 +1,14 @@
+<%= @pet.name %>
+<%= @pet.species %>
+<%= @pet.environment %>
+<%= @pet.age %>
+<%= @pet.price %>
+<%= @pet.address %>
+<% if @pet.photo.attached? %>
+  <%= cl_image_tag @pet.photo.key, width: 400, height: 300, crop: :fill %>
+<% else %>
+  <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
+<% end %>
+
+
+
