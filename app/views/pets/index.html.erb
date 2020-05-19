@@ -7,6 +7,12 @@
     <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
   <% end %>
   <li class="pets-list-item"><%= pet.name %></li>
+  <li>
+  <%= link_to "Delete #{pet.name}",
+            pet_path(pet),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+  </li>
   <% end %>
 <hr>
 <%= link_to "Add a pet", new_pet_path  %>
