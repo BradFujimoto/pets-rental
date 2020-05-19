@@ -1,0 +1,12 @@
+<h1>Update your post here</h1>
+<hr>
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :species %>
+  <%= f.input :environment %>
+  <%= f.input :age %>
+  <%= f.input :price %>
+  <%= f.input :address %>
+  <%= f.submit %>
+<% end %>
