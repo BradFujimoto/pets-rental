@@ -1,0 +1,10 @@
+<h1>Add your booking to the pet you want</h1>
+<hr>
+<%= simple_form_for [@pet, @booking]  do |f| %>
+  <%= f.input :date_start %>
+  <%= f.input :date_end %>
+  <%= f.hidden_field :pet_id, value: @pet.id %>
+  <%= f.submit %>
+<% end %>
+
+
