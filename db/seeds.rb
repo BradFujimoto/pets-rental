@@ -45,9 +45,35 @@ pet5 = Pet.new(species: "spider", name: "sting", user: user1)
 pet5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet5.save
 
+file = URI.open('https://p0.storage.canalblog.com/06/38/1340217/124506477_o.jpg')
+pet6 = Pet.new(species: "spider", name: "sting", user: user1)
+pet6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+pet6.save
+
+file = URI.open('https://static.educalingo.com/img/en/800/parrot.jpg')
+pet7 = Pet.new(species: "spider", name: "sting", user: user1)
+pet7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+pet7.save
+
+file = URI.open('https://lh3.googleusercontent.com/proxy/hy12VshECOgcKBiCwupG3EG5N8EEpzxhPXvv94qw5xENhD38A3adT9zt1rlGNREKnhbh6ydaMA80B_2cd98_6fsRZBwv12ZQCtnQzzKxCAEjB4pSx26sLbCNKh68oEP7Oxumz3fgp4xtel1HXouVMgjxx5L9bfbo2wiFsW0xWFh-c4zIE84n8ucITw')
+pet8 = Pet.new(species: "spider", name: "sting", user: user1)
+pet8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+pet8.save
+
+file = URI.open('https://cdn-s-www.dna.fr/images/EAE75D75-BAD4-4D29-BE4A-3F2F90BDF9E3/NW_raw/meng-meng-la-femelle-panda-photo-tobias-schwarz-afp-1566900838.jpg')
+pet9 = Pet.new(species: "spider", name: "sting", user: user1)
+pet9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+pet9.save
+
+
+
 Booking.create(pet: pet1, user: user4, total_price: 1000)
 Booking.create(pet: pet3, user: user4, total_price: 7000)
 Booking.create(pet: pet2, user: user4, total_price: 2000)
 Booking.create(pet: pet4, user: user4, total_price: 7000)
 Booking.create(pet: pet5, user: user4, total_price: 2000)
+Booking.create(pet: pet6, user: user4, total_price: 7000)
+Booking.create(pet: pet7, user: user4, total_price: 2000)
+Booking.create(pet: pet8, user: user4, total_price: 2000)
+Booking.create(pet: pet9, user: user4, total_price: 2000)
 
