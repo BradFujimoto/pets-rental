@@ -22,8 +22,10 @@
     <%= f.submit %>
   <% end %>
 <br>
+<% unless @pet.bookings.empty? %>
 <h3>My reservation begins on <%= @pet.bookings.last.date_start %></h3>
 <h3>My reservation ends on <%= @pet.bookings.last.date_end %></h3>
+<% end %>
 <br>
   <%= link_to "Back to available pets", pets_path  %>
 
