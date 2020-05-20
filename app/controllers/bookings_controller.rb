@@ -12,11 +12,11 @@ class BookingsController < ApplicationController
         @booking.pet = @pet 
         @booking.user = current_user
             if @booking.save
-            redirect_to pet_path(@pet)
+                redirect_to pet_path(@pet)
             else
-            raise
-            @booking = Booking.new
-            render "pets/show"
+                raise
+                @booking = Booking.new
+                render "pets/show"
             end
     end
 
