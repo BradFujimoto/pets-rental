@@ -4,6 +4,19 @@
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 15px;
+    h2 {
+      &:hover {
+        text-decoration:none;
+      }
+    }
 }
+
+.home-link {
+  &:hover {
+        text-decoration:none;
+  }
+}
+
+
+

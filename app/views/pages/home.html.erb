@@ -1,25 +1,26 @@
-    
-        <div class=" banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'banner.jpg' %>'); text-align: center"> 
-            <h1>Welcome to Pet rental</h1>
-            <p id="unique-proposition">Have fun with your pet</p>
-            <a href="#" class="btn btn-dark">Find your Pet!</a>
-        </div>   
-    
+<div class=" banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'banner.jpg' %>'); text-align: center">
+  <h1>Welcome to Pets Rental</h1>
+  <p id="unique-proposition">The pet paradise</p>
+  <%= link_to "Find your Pet!", pets_path,class: "btn btn-dark"  %>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <%= link_to "#" do  %>
-                <div class="card-home">
-                    <h2>Rent a pet</h2>
-                </div>
-            <% end %>
-        </div> 
+          <div class="card-home p-5 flex-column text-center shadow-sm p-3 mb-5 rounded">
+              <h2 class="mb-3">You've always wanted a pet, but you're not ready for a life commitment ?</h2>
+              <%= link_to pets_path do  %>
+                    <h4 class="btn btn-dark">Rent a pet !</h4>
+                    <% end %>
+          </div>
+        </div>
         <div class="col-6">
-            <%= link_to "#" do  %>
-                <div class="card-home">
-                    <h2>Post a pet</h2>
-                </div>
-            <% end %>
-        </div> 
+          <div class="card-home p-5 flex-column text-center shadow-sm p-3 mb-5 rounded">
+              <h2 class="mb-3">You have some pets and you might need a day off. Put them in good hands</h2>
+              <%= link_to new_pet_path do  %>
+                    <h4 class="btn btn-dark">Post a pet</h4>
+                    <% end %>
+          </div>
+        </div>
     </div>
 </div>
