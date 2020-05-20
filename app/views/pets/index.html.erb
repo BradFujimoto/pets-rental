@@ -1,39 +1,37 @@
-<h1>Available pets</h1>
-<hr>
-
 <div class="container my-5">
-  <div class="row">
-    <div class="col">
-      <div class="cards">
-        <% @pets.each do |pet| %>
-
-            <% if pet.photo.attached? %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(pet.photo.key) %>)">
-                <%= link_to pet.name, pet_path(pet) %>
-                  <%= link_to "+",
+  <h1>Available pets</h1>
+  <hr>
+    <div class="row">
+      <div class="col">
+        <div class="cards">
+          <% @pets.each do |pet| %>
+            <div class="card-trip">
+              <% if pet.photo.attached? %>
+                <%= cl_image_tag pet.photo.key%>
+              <% else %>
+                <%= cl_image_tag("dessin-chien_cojyc3.jpg",
+                        width: 400, height: 300, crop: :fill) %>
+              <% end %>
+              <%= link_to "+",
                             pet_path(pet),
                             method: :delete,
                             data: { confirm: "Are you sure?" },
                             class: "card-remove-link" %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to pet.name, pet_path(pet) %></h2>
+                  <p><%= pet.species %></p>
+                </div>
+                <h2 class="card-trip-pricing">10$/day</h2>
               </div>
-            <% else %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "https://res.cloudinary.com/da7juwdee/image/upload/v1589893168/dessin-chien_cojyc3.jpg"%>)">
-                <%= link_to pet.name, pet_path(pet) %>
+            </div>
 
-                  <%= link_to "+",
-                            pet_path(pet),
-                            method: :delete,
-                            data: { confirm: "Are you sure?" },
-                            class: "card-remove-link" %>
-
-              </div>
-            <% end %>
-        <% end %>
-
+          <% end %>
       </div>
     </div>
   </div>
+
+  <hr>
+  <%= link_to "I want to rent my own pet", new_pet_path  %>
 </div>
 
-<hr>
-<%= link_to "I want to rent my own pet", new_pet_path  %>
