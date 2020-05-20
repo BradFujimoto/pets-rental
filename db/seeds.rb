@@ -31,7 +31,7 @@ pet2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet2.save
 
 file = URI.open('https://www.lejardindesanimaux.com/wp-content/uploads/2014/08/Le-Jardin-des-animaux-drole-de-chien-184.jpg')
-pet3 = Pet.new(species: "dog", name: "El Puppy", user: user1, address: "45 rue de juliod", age: 1 , environment: "outdoor", price: "30€")
+pet3 = Pet.new(species: "dog", name: "Puppy", user: user1, address: "45 rue de juliod", age: 1 , environment: "outdoor", price: "30€")
 pet3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet3.save
 
