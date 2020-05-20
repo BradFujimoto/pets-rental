@@ -26,45 +26,44 @@ pet1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet1.save
 
 file = URI.open('https://img.maxisciences.com/s3/frgsd/1024/animal/default_2019-10-08_ab4cfee3-cc8e-4a3c-a207-7853579de7ce.jpeg')
-pet2 = Pet.new(species: "spider", name: "dumbo", user: user1)
+pet2 = Pet.new(species: "elephant", name: "dumbo", user: user1)
 pet2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet2.save
 
 file = URI.open('https://www.lejardindesanimaux.com/wp-content/uploads/2014/08/Le-Jardin-des-animaux-drole-de-chien-184.jpg')
-pet3 = Pet.new(species: "spider", name: "puppy", user: user1)
+pet3 = Pet.new(species: "dog", name: "puppy", user: user1, address: "45 rue de juliod", age: 1 , environment: "outdoor", price: "30€")
 pet3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet3.save
 
 file = URI.open('https://lareleveetlapeste.fr/wp-content/uploads/2019/01/image-couv-site-92922.jpg')
-pet4 = Pet.new(species: "spider", name: "king", user: user1)
+pet4 = Pet.new(species: "lion", name: "king", user: user1)
 pet4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet4.save
 
 file = URI.open('https://www.novastan.org/fr/wp-content/uploads/sites/4/2020/02/scorpion-931561_1920-1300x901.jpg')
-pet5 = Pet.new(species: "spider", name: "sting", user: user1)
+pet5 = Pet.new(species: "scorpion", name: "sting", user: user1)
 pet5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet5.save
 
 file = URI.open('https://p0.storage.canalblog.com/06/38/1340217/124506477_o.jpg')
-pet6 = Pet.new(species: "spider", name: "sting", user: user1)
+pet6 = Pet.new(species: "iguane", name: "sting", user: user1)
 pet6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet6.save
 
 file = URI.open('https://static.educalingo.com/img/en/800/parrot.jpg')
-pet7 = Pet.new(species: "spider", name: "sting", user: user1)
+pet7 = Pet.new(species: "parrot", name: "sting", user: user1)
 pet7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet7.save
 
 file = URI.open('https://lh3.googleusercontent.com/proxy/hy12VshECOgcKBiCwupG3EG5N8EEpzxhPXvv94qw5xENhD38A3adT9zt1rlGNREKnhbh6ydaMA80B_2cd98_6fsRZBwv12ZQCtnQzzKxCAEjB4pSx26sLbCNKh68oEP7Oxumz3fgp4xtel1HXouVMgjxx5L9bfbo2wiFsW0xWFh-c4zIE84n8ucITw')
-pet8 = Pet.new(species: "spider", name: "sting", user: user1)
+pet8 = Pet.new(species: "wolf", name: "sting", user: user1)
 pet8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet8.save
 
 file = URI.open('https://cdn-s-www.dna.fr/images/EAE75D75-BAD4-4D29-BE4A-3F2F90BDF9E3/NW_raw/meng-meng-la-femelle-panda-photo-tobias-schwarz-afp-1566900838.jpg')
-pet9 = Pet.new(species: "spider", name: "sting", user: user1)
+pet9 = Pet.new(species: "panda", name: "sting", user: user1)
 pet9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet9.save
-
 
 
 Booking.create(pet: pet1, user: user4, total_price: 1000)
