@@ -1,18 +1,37 @@
-<h1>Available pets</h1>
-<hr>
-  <ul><% @pets.each do |pet| %></ul>
-  <% if pet.photo.attached? %>
-    <%= cl_image_tag pet.photo.key, width: 400, height: 300, crop: :fill %>
-  <% else %>
-    <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
-  <% end %>
-  <li class="pets-list-item"><%= pet.name %></li>
-  <li>
-  <%= link_to "Delete #{pet.name}",
-            pet_path(pet),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-  </li>
-  <% end %>
-<hr>
-<%= link_to "Add a pet", new_pet_path  %>
+<div class="container my-5">
+  <h1>Available pets</h1>
+  <hr>
+    <div class="row">
+      <div class="col">
+        <div class="cards">
+          <% @pets.each do |pet| %>
+            <div class="card-trip">
+              <% if pet.photo.attached? %>
+                <%= cl_image_tag pet.photo.key%>
+              <% else %>
+                <%= cl_image_tag("dessin-chien_cojyc3.jpg",
+                        width: 400, height: 300, crop: :fill) %>
+              <% end %>
+              <%= link_to "+",
+                            pet_path(pet),
+                            method: :delete,
+                            data: { confirm: "Are you sure?" },
+                            class: "card-remove-link" %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= link_to pet.name, pet_path(pet) %></h2>
+                  <p><%= pet.species %></p>
+                </div>
+                <h2 class="card-trip-pricing">10$/day</h2>
+              </div>
+            </div>
+
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <%= link_to "I want to rent my own pet", new_pet_path  %>
+</div>
+
