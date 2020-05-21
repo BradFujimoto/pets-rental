@@ -3,7 +3,10 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @pets = Pet.all.reverse
+    @pets = Pet.order(created_at: :desc)
+    if params[:filter]
+      @pets = @pets.where(species: params[:filter][:species])
+    end
   end
 
   def show
@@ -16,6 +19,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
+    @pet.name = @pet.name.capitalize
     @pet.user = current_user
     if @pet.save
       redirect_to pets_path
@@ -34,7 +38,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet.destroy
-    redirect_to pets_path
+    redirect_to dashboard_path
   end
 
   private
