@@ -8,7 +8,7 @@
   <h5><strong>Species: </strong><%= @pet.species %></h5><br>
   <h5><strong>Lives: </strong><%= @pet.environment %></h5><br>
   <h5><strong>Age: </strong><%= @pet.age %></h5><br>
-  <h5><strong>Daily price: </strong><%= @pet.price %> euros</h5><br>
+  <h5><strong>Daily price: </strong><%= @pet.price %> dollars</h5><br>
   <h5><strong>Home: </strong><%= @pet.address %></h5><br><br
 
   <h1> </h1>
@@ -25,6 +25,50 @@
   <%= link_to "Back to available pets", pets_path  %>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-8 show-all">
+      <div class="show-photo">
+          <% if @pet.photo.attached? %>
+          <%= cl_image_tag @pet.photo.key, class: "photo" %>
+          <% else %>
+          <%= cl_image_tag("dessin-chien_cojyc3") %>
+          <% end %>
+      </div>
+      <div class="show-description">
+        <h5><strong>Species: </strong><%= @pet.species %></h5>
+        <h5><strong>Lives: </strong><%= @pet.environment %></h5>
+        <h5><strong>Age: </strong><%= @pet.age %></h5>
+        <h5><strong>Daily price: </strong><%= @pet.price %> euros</h5>
+        <h5><strong>Home: </strong><%= @pet.address %></h5><br>
+      </div>
+    </div>  
+    <div class="col-4 show-booking">
+      <div class="form-wrapper" style="width: 100%; margin: 0 auto; padding: 10px 0">
+        <h2><strong>Booking</strong></h2>
+
+        <%= simple_form_for [@pet, @booking] do |f| %>
+        <%= f.input :date_start, as: :string, required: false, input_html: {class: "datepicker"}, label: "Start date" %>
+        <%= f.input :date_end, as: :string, required: false, input_html: {class: "datepicker"}, label: "End date" %>
+        <%= f.hidden_field :pet_id, value: @pet.id %>
+        <%= f.button :submit, "Create booking", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
+<br>
 
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3" style="margin-top: 40px"> 
+      <% unless @pet.bookings.empty? %>
+        <h3>My reservation begins on <%= @pet.bookings.last.date_start %></h3>
+        <h3>My reservation ends on <%= @pet.bookings.last.date_end %></h3>
+      <% end %>
+      <br>
+      <%= link_to "Back to available pets", pets_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
