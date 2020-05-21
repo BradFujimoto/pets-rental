@@ -3,7 +3,10 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @pets = Pet.all.reverse
+    @pets = Pet.order(created_at: :desc)
+    if params[:filter]
+      @pets = @pets.where(species: params[:filter][:species])
+    end
   end
 
   def show
