@@ -56,6 +56,7 @@ pet7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet7.save
 
 file = URI.open('https://static.educalingo.com/img/en/800/parrot.jpg')
+
 pet8 = Pet.new(species: "wolf", name: "The wild", user: user1, price: 9)
 pet8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet8.save
@@ -65,6 +66,10 @@ pet9 = Pet.new(species: "panda", name: "The Teddy Bear", user: user1, price: 6)
 pet9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet9.save
 
+Pet.all.each do |pet|
+  pet.name = pet.name.capitalize
+  pet.save
+end
 
 Booking.create(pet: pet1, user: user4, total_price: 1000)
 Booking.create(pet: pet3, user: user4, total_price: 7000)

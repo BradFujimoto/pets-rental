@@ -16,6 +16,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
+    @pet.name = @pet.name.capitalize
     @pet.user = current_user
     if @pet.save
       redirect_to pets_path
