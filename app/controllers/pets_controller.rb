@@ -35,7 +35,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet.destroy
-    redirect_to pets_path
+    redirect_to dashboard_path
   end
 
   private
