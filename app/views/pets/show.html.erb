@@ -1,8 +1,29 @@
 <div class="container">
-  <div class="pet-name">
-    <h1><%= @pet.name %></h1>
-  </div>
-</div> 
+  <h1><%= @pet.name %></h1><br>
+  <% if @pet.photo.attached? %>
+    <%= cl_image_tag @pet.photo.key, width: 400, height: 300, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
+  <% end %><br><br>
+  <h5><strong>Species: </strong><%= @pet.species %></h5><br>
+  <h5><strong>Lives: </strong><%= @pet.environment %></h5><br>
+  <h5><strong>Age: </strong><%= @pet.age %></h5><br>
+  <h5><strong>Daily price: </strong><%= @pet.price %> dollars</h5><br>
+  <h5><strong>Home: </strong><%= @pet.address %></h5><br><br
+
+  <h1> </h1>
+  <h1>Bring <%= @pet.name %> home. Make a reservation.</h1>
+
+  <hr>
+  <%= simple_form_for [@pet, @booking]  do |f| %>
+    <%= f.input :date_start %>
+    <%= f.input :date_end %>
+    <%= f.hidden_field :pet_id, value: @pet.id %>
+    <%= f.submit "Book this pet", class: "btn btn-primary"%>
+  <% end %>
+<br>
+  <%= link_to "Back to available pets", pets_path  %>
+
 
 <div class="container">
   <div class="row">
