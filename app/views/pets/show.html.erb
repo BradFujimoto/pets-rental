@@ -19,7 +19,7 @@
     <%= f.input :date_start %>
     <%= f.input :date_end %>
     <%= f.hidden_field :pet_id, value: @pet.id %>
-    <%= f.submit %>
+    <%= f.submit "Book this pet", class: "btn btn-primary"%>
   <% end %>
 <br>
 <% unless @pet.bookings.empty? %>

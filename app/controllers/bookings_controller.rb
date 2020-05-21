@@ -9,9 +9,10 @@ class BookingsController < ApplicationController
     def create
         @pet = Pet.find(params[:pet_id])
         @booking = Booking.new(booking_params)
-        @booking.pet = @pet 
+        @booking.pet = @pet
         @booking.user = current_user
             if @booking.save
+              flash[:notice] = "Your booking has been submitted"
                 redirect_to pet_path(@pet)
             else
                 @booking = Booking.new
