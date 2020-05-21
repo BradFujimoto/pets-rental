@@ -8,6 +8,6 @@ class Pet < ApplicationRecord
 
   validates :name, presence: true
   validates :species, presence: true, inclusion: { in: SPECIES  }
-  validates :environment, presence: true, inclusion: { in: ENVIRONMENT  }
+  validates :environment, presence: true, inclusion: { in: ENVIRONMENT }
   validates :price, presence: true
 end

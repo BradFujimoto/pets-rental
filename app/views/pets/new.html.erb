@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
     <%= f.input :species, collection: Pet::SPECIES %>
-    <%= f.input :environment, collection: Pet::ENVIRONMENT, input_html: { multiple: true } %>
+    <%= f.input :environment, as: :radio_buttons, collection: Pet::ENVIRONMENT %>
     <%= f.input :age %>
     <%= f.input :price, label: "Price per day" %>
     <%= f.input :address %>
