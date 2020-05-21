@@ -1,9 +1,9 @@
 class PetsController < ApplicationController
-  
+
   before_action :find_pet, only: [ :show, :edit, :update, :destroy ]
-  
+
   def index
-    @pets = Pet.all
+    @pets = Pet.all.reverse
   end
 
   def show
@@ -36,13 +36,13 @@ class PetsController < ApplicationController
     @pet.destroy
     redirect_to pets_path
   end
-  
+
   private
 
   def find_pet
     @pet = Pet.find(params[:id])
   end
-  
+
 
   def pet_params
     params.require(:pet).permit(:name, :species, :environment, :age, :price, :address, :user, :photo)

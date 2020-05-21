@@ -19,11 +19,8 @@
     <%= f.input :date_start %>
     <%= f.input :date_end %>
     <%= f.hidden_field :pet_id, value: @pet.id %>
-    <%= f.submit %>
+    <%= f.submit "Book this pet", class: "btn btn-primary"%>
   <% end %>
-<br>
-<h3>My reservation begins on <%= @pet.bookings.last.date_start %></h3>
-<h3>My reservation ends on <%= @pet.bookings.last.date_end %></h3>
 <br>
   <%= link_to "Back to available pets", pets_path  %>
 
