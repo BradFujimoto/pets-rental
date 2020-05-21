@@ -3,7 +3,7 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @pets = Pet.all
+    @pets = Pet.all.reverse
   end
 
   def show
