@@ -1,0 +1,35 @@
+.show-all {
+    background-color: lightgrey;
+    // height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.show-photo {
+  width: 50%;
+  margin-top: 15px;
+}
+
+.show-description {
+//   background-color: yellow;
+//   height: 200px;
+  width: 50%;
+  padding-left: 10px;
+  margin-top: 15px;
+}
+
+.show-booking {
+//   height: 500px;
+  background-color: grey;
+}
+
+.pet-name {
+  margin: 10px 0;
+}
+
+.photo {
+    width: 100%;
+}
+
+
