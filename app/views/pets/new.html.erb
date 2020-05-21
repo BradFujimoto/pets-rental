@@ -4,10 +4,10 @@
   <%= simple_form_for(@pet) do |f| %>
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :species %>
-    <%= f.input :environment %>
+    <%= f.input :species, collection: Pet::SPECIES %>
+    <%= f.input :environment, collection: Pet::ENVIRONMENT, input_html: { multiple: true } %>
     <%= f.input :age %>
-    <%= f.input :price %>
+    <%= f.input :price, label: "Price per day" %>
     <%= f.input :address %>
     <%= f.submit %>
   <% end %>

@@ -1,6 +1,14 @@
 <div class="container my-5">
   <h1>Available pets</h1>
   <hr>
+
+  <div class="d-flex justify-content-between">
+    <%= simple_form_for(:filter, url: pets_path, method: :get, wrapper: :inline_form, html: { class: 'form-inline mb-3' }) do |f| %>
+        <%= f.input :species, collection: Pet.all.pluck(:species) %>
+        <%= f.submit %>
+    <% end %>
+    <%= link_to "All pets", pets_path %>
+  </div>
     <div class="row">
       <div class="col">
         <div class="cards">
