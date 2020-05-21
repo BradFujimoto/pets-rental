@@ -1,0 +1,36 @@
+<h1>My pets posted to the website</h1>
+<% @my_pets.each do |pet| %>
+<h3><%= pet.name %></h3>
+<% if pet.photo.attached? %>
+    <%= cl_image_tag pet.photo.key, width: 400, height: 300, crop: :fill %>
+  <% else %>
+    <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
+  <% end %><br><br>
+<% end %>
+<h1>My bookings of other pets</h1>
+<% @my_bookings.each do |booking| %>
+  <h3><%= booking.pet.name %></h3>
+  <h6>Start date: <%= booking.date_start %></h6>
+  <h6>Start date: <%= booking.date_end %></h6>
+  <% if booking.pet.photo.attached? %>
+      <%= cl_image_tag booking.pet.photo.key, width: 400, height: 300, crop: :fill %>
+    <% else %>
+      <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
+    <% end %><br><br>
+  <% end %>
+
+<h1>Reservations of my pets</h1>
+  <% @client_bookings.each do |booking| %>
+  <h3><%= booking.pet.name %></h3>
+  <h6>Start date: <%= booking.date_start %></h6>
+  <h6>Start date: <%= booking.date_end %></h6>
+  <% if booking.validated == false %>
+    <%= link_to "Validate booking", booking_validate_path(booking), method: :patch %>
+    <% else %>
+    <h6>Booking validated</h6>
+  <% end %>
+  <% end %>
+
+
+
+

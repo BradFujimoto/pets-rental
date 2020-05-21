@@ -20,10 +20,20 @@ class BookingsController < ApplicationController
             end
     end
 
+    def validate
+      @booking = Booking.find(params[:booking_id])
+      @booking.validated = true
+      if @booking.save
+        redirect_to dashboard_path
+      else
+        flash[:alert] = "Sorry you cannot validate this booking. Please contact your administrator."
+      end
+    end
+
 private
 
     def booking_params
-        params.require(:booking).permit(:date_start, :date_end, :user, :pet)
+        params.require(:booking).permit(:date_start, :date_end, :user, :pet, :validated)
     end
 
 
