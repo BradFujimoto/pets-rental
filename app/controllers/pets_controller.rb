@@ -1,7 +1,7 @@
 class PetsController < ApplicationController
-  
+
   before_action :find_pet, only: [ :show, :edit, :update, :destroy ]
-  
+
   def index
     @pets = Pet.all
   end
@@ -16,6 +16,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
+    @pet.name = @pet.name.capitalize
     @pet.user = current_user
     if @pet.save
       redirect_to pets_path
@@ -36,13 +37,13 @@ class PetsController < ApplicationController
     @pet.destroy
     redirect_to pets_path
   end
-  
+
   private
 
   def find_pet
     @pet = Pet.find(params[:id])
   end
-  
+
 
   def pet_params
     params.require(:pet).permit(:name, :species, :environment, :age, :price, :address, :user, :photo)
