@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
         @booking.user = current_user
             if @booking.save
               flash[:notice] = "Your booking has been submitted"
-                redirect_to pet_path(@pet)
+                redirect_to dashboard_path
             else
                 @booking = Booking.new
                 render "pets/show"
@@ -28,6 +28,12 @@ class BookingsController < ApplicationController
       else
         flash[:alert] = "Sorry you cannot validate this booking. Please contact your administrator."
       end
+    end
+
+    def destroy
+      @booking = Booking.find(params[:id])
+      @booking.destroy
+      redirect_to dashboard_path
     end
 
 private
