@@ -55,8 +55,7 @@ pet7 = Pet.new(species: "Parrot", name: "The Singer", user: user1, price: 12, en
 pet7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet7.save
 
-file = URI.open('https://static.educalingo.com/img/en/800/parrot.jpg')
-
+file = URI.open('https://s.rfi.fr/media/display/6d3a6a9a-3d2a-11ea-8ee8-005056a98db9/w:1240/p:16x9/loup_charente_maritime.webp')
 pet8 = Pet.new(species: "Wolf", name: "The wild", user: user1, price: 9, environment: "Both")
 pet8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet8.save
@@ -65,6 +64,21 @@ file = URI.open('https://cdn-s-www.dna.fr/images/EAE75D75-BAD4-4D29-BE4A-3F2F90B
 pet9 = Pet.new(species: "Panda", name: "The Teddy Bear", user: user1, price: 6, environment: "Both")
 pet9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet9.save
+
+file = URI.open('https://img-3.journaldesfemmes.fr/l5mUy2957Wb9QAN1vZhBj6p0AV4=/910x607/smart/bef16f699d8e44bca2dc3f4e0b0ed399/ccmcms-jdf/11609301.jpg')
+pet10 = Pet.new(species: "Dog", name: "Beau", user: user1, price: 30, environment: "Outdoor")
+pet10.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+pet10.save
+
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/7/78/Akita_inu.jpeg')
+pet11 = Pet.new(species: "Dog", name: "Misha", user: user1, price: 40, environment: "Outdoor")
+pet11.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+pet11.save
+
+file = URI.open('https://pearlfrenchbulldogs.com/wp-content/uploads/2019/10/QUEEN-1.jpg')
+pet12 = Pet.new(species: "Dog", name: "Pluto", user: user1, price: 25, environment: "Indoor")
+pet12.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+pet12.save
 
 Pet.all.each do |pet|
   pet.name = pet.name.capitalize
@@ -80,4 +94,8 @@ Booking.create(pet: pet6, user: user4, total_price: 7000)
 Booking.create(pet: pet7, user: user4, total_price: 2000)
 Booking.create(pet: pet8, user: user4, total_price: 2000)
 Booking.create(pet: pet9, user: user4, total_price: 2000)
+Booking.create(pet: pet10, user: user4, total_price: 2000)
+Booking.create(pet: pet11, user: user4, total_price: 2000)
+Booking.create(pet: pet12, user: user4, total_price: 2000)
+
 

@@ -28,11 +28,11 @@
                           class: "card-remove-link" %>
             <div class="card-trip-infos">
               <div>
-                <h2><%= link_to pet.name, pet_path(pet) %></h2>
+                <h2><%= link_to pet.name, pet_path(pet), data: {turbolinks: false} %></h2>
                 <p><%= pet.species %></p>
 
               </div>
-              <h2 class="card-trip-pricing"><%= pet.price %>$/day</h2>
+              <h2 class="card-trip-pricing">$<%= pet.price %>/day</h2>
             </div>
           </div>
 
@@ -44,4 +44,5 @@
   <hr>
   <%= link_to "I want to add my pet to the selection", new_pet_path  %>
 </div>
+
 
