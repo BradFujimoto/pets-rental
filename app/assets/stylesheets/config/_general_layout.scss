@@ -6,12 +6,3 @@ body {
   font-family: $headers-font;
 }
 
-a {
-  color: black !important;
-  text-decoration: none !important;
-  opacity: 0.6 !important;
-  &:hover {
-    text-decoration: none !important;
-    opacity: 0.9 !important;
-  }
-}
