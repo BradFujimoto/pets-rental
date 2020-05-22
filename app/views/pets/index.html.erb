@@ -2,12 +2,14 @@
   <h1>Available pets</h1>
   <hr>
 
-  <div class="d-flex justify-content-between">
-    <%= simple_form_for(:filter, url: pets_path, method: :get, wrapper: :inline_form, html: { class: 'form-inline mb-3' }) do |f| %>
-        <%= f.input :species, collection: Pet.all.pluck(:species) %>
+  <div class="d-flex">
+    <div><%= link_to "All pets", pets_path, class: "btn btn-light mr-3" %></div>
+    <div>
+      <%= simple_form_for(:filter, url: pets_path, method: :get, wrapper: :inline_form, html: { class: 'form-inline mb-3' }) do |f| %>
+        <%= f.input :species, prompt: 'species', collection: Pet.all.pluck(:species).uniq %>
         <%= f.submit "filter", class: "btn btn-dark ml-2" %>
-    <% end %>
-    <%= link_to "All pets", pets_path %>
+      <% end %>
+    </div>
   </div>
 
   <div class="row">
@@ -18,14 +20,9 @@
             <% if pet.photo.attached? %>
               <%= cl_image_tag pet.photo.key%>
             <% else %>
-              <%= cl_image_tag("dessin-chien_cojyc3.jpg",
+              <%= cl_image_tag("dog_kg8g5n.jpg",
                       width: 400, height: 300, crop: :fill) %>
             <% end %>
-            <%= link_to "+",
-                          pet_path(pet),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" },
-                          class: "card-remove-link" %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= link_to pet.name, pet_path(pet), data: {turbolinks: false} %></h2>
@@ -42,7 +39,7 @@
   </div>
 
   <hr>
-  <%= link_to "I want to add my pet to the selection", new_pet_path  %>
+  <%= link_to "I want to add my pet to the selection", new_pet_path, class: "badge badge-light"  %>
 </div>
 
 
