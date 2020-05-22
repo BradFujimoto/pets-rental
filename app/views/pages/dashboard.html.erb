@@ -2,24 +2,47 @@
   <h1>You currently have no pets or bookings on the website</h1>
 <% end %>
 <% unless @my_pets.empty? %>
-  <h1>My pets posted to the website</h1><br>
+
+  <h1>My pets posted to the website</h1>
+  <hr>
+
 <% end %>
-<% @my_pets.each do |pet| %>
-  <h3><%= pet.name %></h3><br>
-  <% if pet.photo.attached? %>
-    <%= cl_image_tag pet.photo.key, width: 400, height: 300, crop: :fill%>
-  <% else %>
-    <%= cl_image_tag("dessin-chien_cojyc3.jpg",
-                        width: 400, height: 300, crop: :fill) %>
-  <% end %>
-  <br>
-  <%= link_to "Update pet profile", edit_pet_path(pet)  %>
-  <br>
-  <%= link_to "Delete #{pet.name}",
-            pet_path(pet),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+  <div class="cards">
+    <% @my_pets.each do |pet| %>
+    <div class="card-trip">
+            <% if pet.photo.attached? %>
+              <%= cl_image_tag pet.photo.key%>
+            <% else %>
+              <%= cl_image_tag("dog_kg8g5n.jpg",
+                      width: 400, height: 300, crop: :fill) %>
+            <% end %>
+            <%= link_to "+",
+                          dashboard_path,
+                          method: :delete,
+                          data: { confirm: "Are you sure?" },
+                          class: "card-remove-link" %>
+            <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,
+                          dashboard_path, class: "card-edit-link" %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= link_to pet.name, pet_path(pet) %></h2>
+                <p><%= pet.species %></p>
+
+              </div>
+              <h2 class="card-trip-pricing"><%= pet.price %>$/day</h2>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <br>
 <br>
 <% unless @my_bookings.empty? %>

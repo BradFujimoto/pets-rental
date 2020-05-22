@@ -49,10 +49,10 @@
 }
 
 .card-remove-link {
-  color: blue;
+  color: white;
   text-decoration: none;
   border-radius: 50%;
-  border: 1px solid blue;
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,17 +61,40 @@
   position: absolute;
   right: 10px;
   top: 10px;
-  opacity: 0.8;
+  opacity: 0.6;
   transform: rotate(45deg);
   font-weight: lighter;
   &:hover {
-    color: grey;
-    border: 1px solid grey;
+    color: white;
+    border: 1px solid white;
     text-decoration: none;
     opacity: 1;
   }
 }
 
+.card-edit-link {
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 45px;
+  top: 10px;
+  opacity: 0.6;
+  font-weight: lighter;
+  &:hover {
+    transition: ease 1s;
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
