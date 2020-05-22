@@ -1,3 +1,4 @@
+<div class="container">
 <% if @my_pets.empty? && @my_bookings.empty? && @client_bookings.empty? %>
   <h1>You currently have no pets or bookings on the website</h1>
 <% end %>
@@ -8,7 +9,7 @@
 
 <% end %>
 
-<div class="container">
+
   <div class="row">
     <div class="col">
   <div class="cards">
@@ -41,7 +42,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 <br>
 <br>
@@ -49,55 +50,93 @@
 
 
   <h1>My bookings of other pets</h1>
+  <hr>
 <% end %>
-<br>
+    <div class="row">
+    <div class="col">
+    <div class="cards">
+
 <% @my_bookings.each do |booking| %>
-  <h3><%= booking.pet.name %></h3>
-  <% if booking.pet.photo.attached? %>
-    <%= cl_image_tag booking.pet.photo.key, width: 400, height: 300, crop: :fill %>
-  <% else %>
-    <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
-  <% end %><br><br>
-  <h6>Start date: <%= booking.date_start %></h6>
-  <h6>End date: <%= booking.date_end %></h6>
-  <h6>Total rental price: $<%= (booking.date_end.day - booking.date_start.day)*booking.pet.price%></h6>
-  <% if booking.validated == false %>
-    <h6>Waiting for validation from pet owner</h6>
-  <% else %>
-    <h6>Booking validated</h6>
-  <% end %>
-  <%= link_to "Delete booking of #{booking.pet.name}",
-            booking_path(booking),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %><br><br>
+
+    <div class="card-trip">
+            <% if booking.pet.photo.attached? %>
+              <%= cl_image_tag booking.pet.photo.key%>
+            <% else %>
+              <%= cl_image_tag("dog_kg8g5n.jpg",
+                      width: 400, height: 300, crop: :fill) %>
+            <% end %>
+            <%= link_to "+",
+                          booking_path(booking),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" },
+                          class: "card-remove-link" %>
+
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= link_to booking.pet.name, pet_path(booking.pet) %></h2>
+                <p>From <%= booking.date_start %> to <%= booking.date_end %></p>
+                <p><% if booking.validated == false %>
+                      <h6 class="badge badge-warning">Waiting for validation from pet owner</h6>
+                    <% else %>
+                      <h6 class="badge badge-success">Booking validated</h6>
+                    <% end %></p>
+              </div>
+              <h2 class="card-trip-pricing">$<%= (booking.date_end.day - booking.date_start.day)*booking.pet.price%></h2>
+            </div>
+          </div>
+
 <% end %>
+      </div>
+      </div>
+    </div>
+
+
+
 <br>
 <% unless @client_bookings.empty? %>
   <h1>Reservations of my pets</h1>
+  <hr>
 <% end %>
-<br>
+    <div class="row">
+    <div class="col">
+    <div class="cards">
 <% @client_bookings.each do |booking| %>
-  <h3><%= booking.pet.name %></h3>
-  <% if booking.pet.photo.attached? %>
+<div class="card-trip">
+   <% if booking.pet.photo.attached? %>
     <%= cl_image_tag booking.pet.photo.key, width: 400, height: 300, crop: :fill %>
-  <% else %>
+    <% else %>
     <%= cl_image_tag("dessin-chien_cojyc3", width: 400, height: 300, crop: :fill) %>
-  <% end %><br><br>
-  <h6>Start date: <%= booking.date_start %></h6>
-  <h6>Start date: <%= booking.date_end %></h6>
-    <h6>Total rental price: $<%= (booking.date_end.day - booking.date_start.day)*booking.pet.price%></h6>
-  <% if booking.validated == false %>
-    <%= link_to "Validate booking of #{booking.pet.name}", booking_validate_path(booking), method: :patch %>
-  <% else %>
-    <h6>Booking validated</h6>
   <% end %>
-  <br>
-  <%= link_to "Delete booking of #{booking.pet.name}",
+    <div class="card-trip-infos">
+      <div>
+         <h2><%= booking.pet.name %></h2>
+         <p>From <%= booking.date_start %> to <%= booking.date_end %></p>
+         <div class="d-flex">
+       <div>
+       <% if booking.validated == false %>
+        <%= link_to "Validate booking", booking_validate_path(booking), method: :patch, class: "badge badge-primary" %>
+      <% else %>
+        <h6 class="badge badge-success">Booking validated</h6>
+      <% end %>
+       </div>
+
+  <div>
+  <%= link_to "Cancel booking",
             booking_path(booking),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" }, class: "badge badge-secondary ml-2" %>
+  </div>
+        </div>
+         </div>
+    <h2 class="card-trip-pricing">$<%= (booking.date_end.day - booking.date_start.day)*booking.pet.price%></h2>
+
+      </div>
 <% end %>
 
+    </div>
+    </div>
+    </div>
+    </div>
 
 
 
