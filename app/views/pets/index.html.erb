@@ -21,11 +21,6 @@
               <%= cl_image_tag("dessin-chien_cojyc3.jpg",
                       width: 400, height: 300, crop: :fill) %>
             <% end %>
-            <%= link_to "+",
-                          pet_path(pet),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" },
-                          class: "card-remove-link" %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= link_to pet.name, pet_path(pet), data: {turbolinks: false} %></h2>
