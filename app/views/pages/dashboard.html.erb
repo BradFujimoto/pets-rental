@@ -26,7 +26,7 @@
                           data: { confirm: "Are you sure?" },
                           class: "card-remove-link" %>
             <%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,
-                          dashboard_path, class: "card-edit-link" %>
+                          edit_pet_path(pet), class: "card-edit-link" %>
             <div class="card-trip-infos">
               <div>
                 <h2><%= link_to pet.name, pet_path(pet) %></h2>
