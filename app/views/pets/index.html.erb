@@ -2,12 +2,14 @@
   <h1>Available pets</h1>
   <hr>
 
-  <div class="d-flex justify-content-between">
-    <%= simple_form_for(:filter, url: pets_path, method: :get, wrapper: :inline_form, html: { class: 'form-inline mb-3' }) do |f| %>
-        <%= f.input :species, collection: Pet.all.pluck(:species) %>
+  <div class="d-flex">
+    <div><%= link_to "All pets", pets_path, class: "btn btn-light mr-3" %></div>
+    <div>
+      <%= simple_form_for(:filter, url: pets_path, method: :get, wrapper: :inline_form, html: { class: 'form-inline mb-3' }) do |f| %>
+        <%= f.input :species, prompt: 'species', collection: Pet.all.pluck(:species).uniq %>
         <%= f.submit "filter", class: "btn btn-dark ml-2" %>
-    <% end %>
-    <%= link_to "All pets", pets_path %>
+      <% end %>
+    </div>
   </div>
 
   <div class="row">
@@ -18,7 +20,7 @@
             <% if pet.photo.attached? %>
               <%= cl_image_tag pet.photo.key%>
             <% else %>
-              <%= cl_image_tag("dessin-chien_cojyc3.jpg",
+              <%= cl_image_tag("dog_kg8g5n.jpg",
                       width: 400, height: 300, crop: :fill) %>
             <% end %>
             <div class="card-trip-infos">
