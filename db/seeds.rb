@@ -20,65 +20,51 @@ user4.save
 user5=User.new(email: "brad@gmail.com", password: "braddfuji", first_name: "brad", last_name: "fuji" )
 user5.save
 
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/3/31/Lasiodora_parahybana_2009_G03.jpg')
-pet1 = Pet.new(species: "Spider", name: "Thomas", user: user1, price: 12, environment: "Indoor")
+file = URI.open('https://i.pinimg.com/originals/42/a8/ad/42a8ad6c7f7bb118aaa1c42336bf4122.jpg')
+pet1 = Pet.new(species: "Spider", name: "Itsy", user: user1, price: 12, environment: "Indoor")
 pet1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet1.save
 
-file = URI.open('https://img.maxisciences.com/s3/frgsd/1024/animal/default_2019-10-08_ab4cfee3-cc8e-4a3c-a207-7853579de7ce.jpeg')
-pet2 = Pet.new(species: "Elephant", name: "Louis", user: user1, price: 15, environment: "Outdoor")
+file = URI.open('https://cdn.mos.cms.futurecdn.net/iXeBEQKNqRJkWWeXej3HcT-1200-80.jpg')
+pet2 = Pet.new(species: "Elephant", name: "Dumbo", user: user1, price: 15, environment: "Outdoor")
 pet2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet2.save
 
-file = URI.open('https://www.lejardindesanimaux.com/wp-content/uploads/2014/08/Le-Jardin-des-animaux-drole-de-chien-184.jpg')
-pet3 = Pet.new(species: "Dog", name: "Laura", user: user1, address: "45 rue de juliod", age: 1 , environment: "Outdoor", price: 30)
+file = URI.open('https://cms-assets.tutsplus.com/uploads/users/108/posts/30758/preview_image/how-to-draw-puppy-preview.png')
+pet3 = Pet.new(species: "Dog", name: "Snoopy", user: user1, address: "45 rue de juliod", age: 1 , environment: "Outdoor", price: 30)
 pet3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet3.save
 
-file = URI.open('https://lareleveetlapeste.fr/wp-content/uploads/2019/01/image-couv-site-92922.jpg')
-pet4 = Pet.new(species: "Lion", name: "Dimitri", user: user1, price: 12, environment: "Outdoor")
+file = URI.open('https://cdn.mos.cms.futurecdn.net/L88NgH9C43zSr3Tgay5LF7-1200-80.jpg')
+pet4 = Pet.new(species: "Lion", name: "King", user: user1, price: 12, environment: "Outdoor")
 pet4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet4.save
 
-file = URI.open('https://www.novastan.org/fr/wp-content/uploads/sites/4/2020/02/scorpion-931561_1920-1300x901.jpg')
-pet5 = Pet.new(species: "Scorpion", name: "Paul", user: user1, price: 32, environment: "Outdoor")
+file = URI.open('https://easyanimals2draw.com/wp-content/uploads/2019/04/Scorpion-drawing.jpg')
+pet5 = Pet.new(species: "Scorpion", name: "Apollo", user: user1, price: 32, environment: "Outdoor")
 pet5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet5.save
 
-file = URI.open('https://p0.storage.canalblog.com/06/38/1340217/124506477_o.jpg')
-pet6 = Pet.new(species: "Iguane", name: "Diane", user: user1, price: 22, environment: "Both")
+file = URI.open('https://printablefreecoloring.com/image/animals/drawing-iguana-23.jpg')
+pet6 = Pet.new(species: "Iguane", name: "Cookie", user: user1, price: 22, environment: "Both")
 pet6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet6.save
 
-file = URI.open('https://static.educalingo.com/img/en/800/parrot.jpg')
-pet7 = Pet.new(species: "Parrot", name: "Basile", user: user1, price: 12, environment: "Both")
+file = URI.open('https://i.etsystatic.com/9475216/r/il/73de63/1417142110/il_570xN.1417142110_52i3.jpg')
+pet7 = Pet.new(species: "Parrot", name: "Roger", user: user1, price: 12, environment: "Both")
 pet7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet7.save
 
-file = URI.open('https://s.rfi.fr/media/display/6d3a6a9a-3d2a-11ea-8ee8-005056a98db9/w:1240/p:16x9/loup_charente_maritime.webp')
-pet8 = Pet.new(species: "Wolf", name: "Julien", user: user1, price: 9, environment: "Both")
+file = URI.open('https://cms-assets.tutsplus.com/uploads/users/108/posts/28935/final_image/how-to-draw-wolf-step-by-step-final.png')
+pet8 = Pet.new(species: "Wolf", name: "Star", user: user1, price: 9, environment: "Both")
 pet8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet8.save
 
-file = URI.open('https://cdn-s-www.dna.fr/images/EAE75D75-BAD4-4D29-BE4A-3F2F90BDF9E3/NW_raw/meng-meng-la-femelle-panda-photo-tobias-schwarz-afp-1566900838.jpg')
-pet9 = Pet.new(species: "Panda", name: "Lamiaa", user: user1, price: 6, environment: "Both")
+file = URI.open('https://www.yedraw.com/forest-animals/bear-panda.jpg')
+pet9 = Pet.new(species: "Panda", name: "Rose", user: user1, price: 6, environment: "Both")
 pet9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet9.save
 
-file = URI.open('https://img-3.journaldesfemmes.fr/l5mUy2957Wb9QAN1vZhBj6p0AV4=/910x607/smart/bef16f699d8e44bca2dc3f4e0b0ed399/ccmcms-jdf/11609301.jpg')
-pet10 = Pet.new(species: "Dog", name: "Romain", user: user1, price: 30, environment: "Outdoor")
-pet10.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-pet10.save
-
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/7/78/Akita_inu.jpeg')
-pet11 = Pet.new(species: "Dog", name: "Cecile", user: user1, price: 40, environment: "Outdoor")
-pet11.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-pet11.save
-
-file = URI.open('https://pearlfrenchbulldogs.com/wp-content/uploads/2019/10/QUEEN-1.jpg')
-pet12 = Pet.new(species: "Dog", name: "Philippine", user: user1, price: 25, environment: "Indoor")
-pet12.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-pet12.save
 
 Pet.all.each do |pet|
   pet.name = pet.name.capitalize
@@ -94,8 +80,6 @@ Booking.create(pet: pet6, user: user4, total_price: 7000)
 Booking.create(pet: pet7, user: user4, total_price: 2000)
 Booking.create(pet: pet8, user: user4, total_price: 2000)
 Booking.create(pet: pet9, user: user4, total_price: 2000)
-Booking.create(pet: pet10, user: user4, total_price: 2000)
-Booking.create(pet: pet11, user: user4, total_price: 2000)
-Booking.create(pet: pet12, user: user4, total_price: 2000)
+
 
 
