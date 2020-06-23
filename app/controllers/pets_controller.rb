@@ -11,7 +11,7 @@ class PetsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @pet = Pet.geocoded
+
     @markers =
       {
         lat: @pet.latitude,
