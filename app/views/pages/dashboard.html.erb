@@ -22,7 +22,7 @@
                       width: 400, height: 300, crop: :fill) %>
             <% end %>
             <%= link_to "+",
-                          dashboard_path,
+                          pet_path(pet),
                           method: :delete,
                           data: { confirm: "Are you sure?" },
                           class: "card-remove-link" %>
