@@ -21,12 +21,12 @@ user5=User.new(email: "brad@gmail.com", password: "braddfuji", first_name: "brad
 user5.save
 
 file = URI.open('https://i.pinimg.com/originals/42/a8/ad/42a8ad6c7f7bb118aaa1c42336bf4122.jpg')
-pet1 = Pet.new(species: "Spider", name: "Itsy", user: user1, price: 12, environment: "Indoor")
+pet1 = Pet.new(species: "Spider", name: "Itsy", user: user1, price: 12, environment: "Indoor", address: "1 rue du Louvre, Paris")
 pet1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet1.save
 
 file = URI.open('https://cdn.mos.cms.futurecdn.net/iXeBEQKNqRJkWWeXej3HcT-1200-80.jpg')
-pet2 = Pet.new(species: "Elephant", name: "Dumbo", user: user1, price: 15, environment: "Outdoor")
+pet2 = Pet.new(species: "Elephant", name: "Dumbo", user: user1, price: 15, environment: "Outdoor", address: "3 rue des Archives, Paris")
 pet2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet2.save
 
@@ -36,32 +36,32 @@ pet3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet3.save
 
 file = URI.open('https://cdn.mos.cms.futurecdn.net/L88NgH9C43zSr3Tgay5LF7-1200-80.jpg')
-pet4 = Pet.new(species: "Lion", name: "King", user: user1, price: 12, environment: "Outdoor")
+pet4 = Pet.new(species: "Lion", name: "King", user: user1, price: 12, environment: "Outdoor", address: "37 rue Saint Roch, Paris")
 pet4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet4.save
 
 file = URI.open('https://easyanimals2draw.com/wp-content/uploads/2019/04/Scorpion-drawing.jpg')
-pet5 = Pet.new(species: "Scorpion", name: "Apollo", user: user1, price: 32, environment: "Outdoor")
+pet5 = Pet.new(species: "Scorpion", name: "Apollo", user: user1, price: 32, environment: "Outdoor", address: "50 rue Sainte Anne, Paris" )
 pet5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet5.save
 
 file = URI.open('https://printablefreecoloring.com/image/animals/drawing-iguana-23.jpg')
-pet6 = Pet.new(species: "Iguane", name: "Cookie", user: user1, price: 22, environment: "Both")
+pet6 = Pet.new(species: "Iguane", name: "Cookie", user: user1, price: 22, environment: "Both", address: "142 avenue de Clichy, Paris")
 pet6.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet6.save
 
 file = URI.open('https://i.etsystatic.com/9475216/r/il/73de63/1417142110/il_570xN.1417142110_52i3.jpg')
-pet7 = Pet.new(species: "Parrot", name: "Roger", user: user1, price: 12, environment: "Both")
+pet7 = Pet.new(species: "Parrot", name: "Roger", user: user1, price: 12, environment: "Both", address: '142 bd Haussmann, Paris')
 pet7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet7.save
 
 file = URI.open('https://cms-assets.tutsplus.com/uploads/users/108/posts/28935/final_image/how-to-draw-wolf-step-by-step-final.png')
-pet8 = Pet.new(species: "Wolf", name: "Star", user: user1, price: 9, environment: "Both")
+pet8 = Pet.new(species: "Wolf", name: "Star", user: user1, price: 9, environment: "Both", address: '16 villa Gaudelet, Paris')
 pet8.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet8.save
 
 file = URI.open('https://www.yedraw.com/forest-animals/bear-panda.jpg')
-pet9 = Pet.new(species: "Panda", name: "Rose", user: user1, price: 6, environment: "Both")
+pet9 = Pet.new(species: "Panda", name: "Rose", user: user1, price: 6, environment: "Both", address: '142 boulevard de Belleville, Paris')
 pet9.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 pet9.save
 
